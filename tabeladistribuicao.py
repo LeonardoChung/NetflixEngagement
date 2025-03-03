@@ -33,6 +33,6 @@ def tabela_distributiva(coluna):
         )
     print(tabela)
 
-# Exemplo de como usar a função
-coluna = 'Customer Satisfaction Score (1-10)'  # Substitua pelo nome da coluna desejada
+
+coluna = 'Customer Satisfaction Score (1-10)'
 tabela_distributiva(coluna)
