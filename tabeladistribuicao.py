@@ -7,7 +7,7 @@ df = pd.read_csv("Netflix Engagement Dataset.csv")
 def tabela_distributiva(coluna):
     if df[coluna].dtype == 'object': # String
         freq = df[coluna].value_counts() # Contagem dos valores
-        porcentagem = df[coluna].value_counts(normalize=True) * 100 # Porcentagem dos valores
+        porcentagem = df[coluna].value_counts(normalize=True) * 100 # (contagem ÷ total) × 100
         tabela = pd.DataFrame({'frequência': freq, 'percentual (%)': porcentagem})
         
     else:    
