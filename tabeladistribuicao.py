@@ -33,6 +33,6 @@ def tabela_distributiva(coluna):
         )
     print(tabela)
 
-
+# testando
 coluna = 'Customer Satisfaction Score (1-10)'
 tabela_distributiva(coluna)
