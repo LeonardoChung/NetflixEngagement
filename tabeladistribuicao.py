@@ -14,12 +14,14 @@ def tabela_distributiva(coluna):
     
     else:  # Variável numérica
         n = len(df[coluna])
-        A = round(max(df[coluna]) - min(df[coluna]))  # Amplitude total
+        A = round(max(df[coluna]) - min(df[coluna]))  # Amplitude = maior - menor
         i = round(1 + 3.3 * np.log10(n))  # Quantidade de classes
-        h = max(1, round(A / i))  # Amplitude da classe (mínimo 1 para evitar divisão por zero)
+        h = max(1, round(A / i))  # Amplitude da classe
 
         menor = min(df[coluna])
-        intervalos, fi, xi = [], [], []
+        intervalos = []
+        fi = []
+        xi = []
 
         while menor <= max(df[coluna]):
             maior = menor + h
