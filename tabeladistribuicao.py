@@ -4,15 +4,13 @@ import pandas as pd
 # Lê o dataset
 df = pd.read_csv("Netflix Engagement Dataset.csv")
 
-def tabela_distributiva(coluna):
-    """Gera uma tabela de distribuição de frequência para uma variável categórica ou numérica."""
-    
-    if df[coluna].dtype == 'object':  # Variável categórica
+def tabela_distributiva(coluna): 
+    if df[coluna].dtype == 'object':  # String
         freq = df[coluna].value_counts()  # Contagem dos valores
         porcentagem = df[coluna].value_counts(normalize=True) * 100  # (contagem ÷ total) × 100
         tabela = pd.DataFrame({'Frequência': freq, 'Percentual (%)': porcentagem})
     
-    else:  # Variável numérica
+    else:
         n = len(df[coluna])
         A = round(max(df[coluna]) - min(df[coluna]))  # Amplitude = maior - menor
         i = round(1 + 3.3 * np.log10(n))  # Quantidade de classes
